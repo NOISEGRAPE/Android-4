@@ -35,7 +35,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
 
     @Override
     public ContactoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_contacto, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_grid_contacto, parent, false);
 
         return new ContactoViewHolder(v);
     }
@@ -44,8 +44,8 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     public void onBindViewHolder(final ContactoViewHolder contactoViewHolder, int position) {
         final Contacto contacto = contactos.get(position);
         contactoViewHolder.imgFoto.setImageResource(contacto.getFoto());
-        contactoViewHolder.tvNombre.setText(contacto.getNombre());
-        contactoViewHolder.tvTelefono.setText(contacto.getTelefono());
+        //contactoViewHolder.tvNombre.setText(contacto.getNombre());
+        //contactoViewHolder.tvTelefono.setText(contacto.getTelefono());
         contactoViewHolder.tvLikes.setText(String.valueOf(contacto.getLikes()) + " " + activity.getString(R.string.likes));
         
         contactoViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +61,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             }
         });
 
+        /*
         contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +75,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
 
 
             }
-        });
+        });*/
 
 
     }
@@ -87,18 +88,18 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     public static class ContactoViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imgFoto;
-        private TextView tvNombre;
-        private TextView tvTelefono;
-        private ImageButton btnLike;
+        //private TextView tvNombre;
+        //private TextView tvTelefono;
+        //private ImageButton btnLike;
         private TextView tvLikes;
 
         public ContactoViewHolder(View itemView) {
             super(itemView);
 
             imgFoto     = (ImageView) itemView.findViewById(R.id.imgFoto);
-            tvNombre    = (TextView) itemView.findViewById(R.id.tvNombreCV);
-            tvTelefono  = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
-            btnLike     = (ImageButton) itemView.findViewById(R.id.btnLike);
+            //tvNombre    = (TextView) itemView.findViewById(R.id.tvNombreCV);
+            //tvTelefono  = (TextView) itemView.findViewById(R.id.tvTelefonoCV);
+            //btnLike     = (ImageButton) itemView.findViewById(R.id.btnLike);
             tvLikes     = (TextView) itemView.findViewById(R.id.tvLikes);
 
         }
