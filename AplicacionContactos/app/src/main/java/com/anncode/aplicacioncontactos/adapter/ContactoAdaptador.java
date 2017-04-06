@@ -3,20 +3,16 @@ package com.anncode.aplicacioncontactos.adapter;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.anncode.aplicacioncontactos.model.ConstructorContactos;
-import com.anncode.aplicacioncontactos.model.Contacto;
 import com.anncode.aplicacioncontactos.DetalleContacto;
+import com.anncode.aplicacioncontactos.model.Contacto;
 import com.anncode.recyclerviewfragments.R;
-
 
 import java.util.ArrayList;
 
@@ -53,9 +49,9 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             public void onClick(View v) {
                 Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, DetalleContacto.class);
-                intent.putExtra("nombre", contacto.getNombre());
-                intent.putExtra("telefono", contacto.getTelefono());
-                intent.putExtra("email", contacto.getEmail());
+                intent.putExtra("url", contacto.getNombre());
+                intent.putExtra("like", contacto.getTelefono());
+                //intent.putExtra("email", contacto.getEmail());
                 activity.startActivity(intent);
 
             }
