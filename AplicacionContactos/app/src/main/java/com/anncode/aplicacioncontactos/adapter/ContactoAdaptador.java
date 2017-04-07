@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.anncode.aplicacioncontactos.DetalleContacto;
 import com.anncode.aplicacioncontactos.model.Contacto;
@@ -39,7 +38,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
     @Override
     public void onBindViewHolder(final ContactoViewHolder contactoViewHolder, int position) {
         final Contacto contacto = contactos.get(position);
-        contactoViewHolder.imgFoto.setImageResource(contacto.getFoto());
+        //contactoViewHolder.imgFoto.setImageResource(contacto.getFoto());
         //contactoViewHolder.tvNombre.setText(contacto.getNombre());
         //contactoViewHolder.tvTelefono.setText(contacto.getTelefono());
         contactoViewHolder.tvLikes.setText(String.valueOf(contacto.getLikes()) + " " + activity.getString(R.string.likes));
@@ -47,10 +46,10 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
         contactoViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, DetalleContacto.class);
-                intent.putExtra("url", contacto.getNombre());
-                intent.putExtra("like", contacto.getTelefono());
+                intent.putExtra("url", contacto.getUrlFoto());
+                intent.putExtra("like", contacto.getLikes());
                 //intent.putExtra("email", contacto.getEmail());
                 activity.startActivity(intent);
 
